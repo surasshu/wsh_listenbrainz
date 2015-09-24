@@ -11,11 +11,6 @@ Currently, the script will not retry failed submissions but it can log
 all plays to file(s) inside your foobar2000 profile folder. If needed,
 I may be able to modify the script to bulk submit these cached plays in future.
 
-###Known issues
-
-Not all tags written by `Picard` can be submitted with `foobar2000`. Only what
-is viewable in the `Properties` dialog will be sent.
-
 ###Submissions
 
 Along with the timestamp, all tags recognised by `foobar2000`
