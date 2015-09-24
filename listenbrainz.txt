@@ -44,6 +44,9 @@ function on_playback_time() {
 }
 
 function listen() {
+	if (token.length != 36)
+		return fb.trace("WSH Listenbrainz: Token not set.");
+		
 	var metadb = fb.GetNowPlaying();
 	if (!metadb)
 		return;
