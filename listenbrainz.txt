@@ -62,7 +62,7 @@ function on_playback_time() {
 function listen() {
 	if (token.length != 36)
 		return fb.trace("WSH Listenbrainz: Token not set.");
-		
+	
 	var metadb = fb.GetNowPlaying();
 	if (!metadb)
 		return;
@@ -124,13 +124,12 @@ function log(data) {
 	var f = folder + pad(d.getMonth() + 1) + "." + d.getFullYear() + ".json";
 	if (fso.FileExists(f)) {
 		var json = json_parse(utils.ReadTextFile(f));
+		if (json.payload)
+			json = json.payload;
 	} else {
-		var json = {
-			listen_type : "import",
-			payload : []
-		}
+		var json = [];
 	}
-	json.payload.unshift(data.payload[0]);
+	json.unshift(data.payload[0]);
 	save(JSON.stringify(json), f);
 }
 
