@@ -19,20 +19,10 @@ written as `TXXX`.
 
 ###Submissions
 
-Along with the timestamp, the following tags will be submitted:
+Along with the timestamp, all tags recognised by `foobar2000`
+will be sent.
 
-```
-ARTIST
-TRACK
-ALBUM
-TRACK NUMBER
-MUSICBRAINZ_ARTISTID, MUSICBRAINZ ARTIST ID
-MUSICBRAINZ_ALBUMID, MUSICBRAINZ ALBUM ID
-MUSICBRAINZ_TRACKID, MUSICBRAINZ TRACK ID
-```
-
-`ARTIST` and `TRACK` are required, the rest will only be sent if
-present. The script uses the same standard as `Last.fm` for deciding
+The script uses the same standard as `Last.fm` for deciding
 how much of a track you have to play for it to count.This is either
 half the track length or 4 minutes - whichever is lower.
 
