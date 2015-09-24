@@ -18,6 +18,22 @@ var time_elapsed = 0;
 var target_time = 0;
 var timestamp = 0;
 var exclusions = "log|cuesheet|lyrics|unsynced lyrics";
+var mb_names = {
+	"acoustid id" : "acoustid_id",
+	"acoustid fingerprint" : "acoustid_fingerprint",
+	"musicbrainz album artist id" : "musicbrainz_albumartistid",
+	"musicbrainz album id" : "musicbrainz_albumid",
+	"musicbrainz artist id" : "musicbrainz_artistid",
+	"musicbrainz_discid" : "musicbrainz disc id",
+	"musicbrainz release group id" : "musicbrainz_releasegroupid",
+	"musicbrainz release track id" : "musicbrainz_releasetrackid",
+	"musicbrainz trm id" : "musicbrainz_trmid",
+	"musicbrainz work id" : "musicbrainz_workid",
+	"musicip puid" : "musicip_puid",
+	"musicbrainz album release country" : "releasecountry",
+	"musicbrainz album status" : "releasestatus",
+	"musicbrainz album type" : "releasetype"
+}
 
 if (log_data) {
 	var fso = new ActiveXObject("Scripting.FileSystemObject");
@@ -60,13 +76,18 @@ function listen() {
 		if (exclusions.indexOf(name) > -1)
 			continue;
 		
+		if (typeof(mb_names[name]) == "string")
+			var key = mb_names[name];
+		else
+			var key = name;
+		
 		var num = tf("$meta_num(" + name + ")", metadb);
 		if (num == 1) {
-			tags[name] = tf("$meta(" + name + ")", metadb);
+			tags[key] = tf("$meta(" + name + ")", metadb);
 		} else {
-			tags[name] = [];  
+			tags[key] = [];  
 			for (var j = 0; j < num; j++) {
-				tags[name].push(tf("$meta(" + name + "," + j + ")", metadb));
+				tags[key].push(tf("$meta(" + name + "," + j + ")", metadb));
 			}
 		}
 	}
