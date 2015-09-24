@@ -13,9 +13,8 @@ I may be able to modify the script to bulk submit these cached plays in future.
 
 ###Known issues
 
-`foobar2000` cannot read the `UFID` id3v2 frame written by `Picard`.
-It can use `MUSICBRAINZ_TRACKID` or `MUSICBRAINZ TRACK ID` if it's
-written as `TXXX`.
+Not all tags written by `Picard` can be submitted with `foobar2000`. Only what
+is viewable in the `Properties` dialog will be sent.
 
 ###Submissions
 
