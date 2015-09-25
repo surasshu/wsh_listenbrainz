@@ -85,12 +85,15 @@ function listen() {
 		if (num == 1) {
 			tags[key] = tf("$meta(" + name + ")", metadb);
 		} else {
-			tags[key] = [];  
+			tags[key] = [];
 			for (var j = 0; j < num; j++) {
 				tags[key].push(tf("$meta(" + name + "," + j + ")", metadb));
 			}
 		}
 	}
+	
+	if (!tags.artist || !tags.title)
+		return fb.trace("WSH Listenbrainz: Artist/title tag missing. Not submitting.");
 	
 	var data = {
 		listen_type : "single",
