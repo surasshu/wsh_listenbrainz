@@ -17,7 +17,7 @@ Along with the timestamp, all tags recognised by `foobar2000`
 will be sent.
 
 The script uses the same standard as `Last.fm` for deciding
-how much of a track you have to play for it to count.This is either
+how much of a track you have to play for it to count. This is either
 half the track length or 4 minutes - whichever is lower.
 
 ###Instructions
