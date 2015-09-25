@@ -24,7 +24,7 @@ var mb_names = {
 	"musicbrainz album artist id" : "musicbrainz_albumartistid",
 	"musicbrainz album id" : "musicbrainz_albumid",
 	"musicbrainz artist id" : "musicbrainz_artistid",
-	"musicbrainz_discid" : "musicbrainz disc id",
+	"musicbrainz disc id" : "musicbrainz_discid",
 	"musicbrainz release group id" : "musicbrainz_releasegroupid",
 	"musicbrainz release track id" : "musicbrainz_releasetrackid",
 	"musicbrainz trm id" : "musicbrainz_trmid",
