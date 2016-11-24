@@ -137,7 +137,7 @@ function log(data) {
 }
 
 function post(data) {
-	xmlhttp.open("POST", "http://api.listenbrainz.org/1/submit-listens", true);
+	xmlhttp.open("POST", "https://api.listenbrainz.org/1/submit-listens", true);
 	xmlhttp.setRequestHeader("Content-type", "application/json;charset=UTF-8");
 	xmlhttp.setRequestHeader("Authorization" , "Token " + token);
 	xmlhttp.send(JSON.stringify(data));
